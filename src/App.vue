@@ -3,14 +3,28 @@
     <Header />
     <main>
       <WelcomeSection />
+      <StartStepsSection />
+      <ReviewsSection />
+      <QuestionsSections />
     </main>
   </div>
 </template>
 <script>
-import Header from './components/Header.vue';
-import WelcomeSection from './components/WelcomeSection.vue';
+import Header from './components/Header.vue'
+import QuestionsSections from './components/QuestionsSections.vue'
+import ReviewsSection from './components/ReviewsSection.vue'
+import StartStepsSection from './components/StartStepsSection.vue'
+import WelcomeSection from './components/WelcomeSection.vue'
 
-export default { components: { Header, WelcomeSection } };
+export default {
+  components: {
+    Header,
+    WelcomeSection,
+    StartStepsSection,
+    ReviewsSection,
+    QuestionsSections,
+  },
+}
 </script>
 <style lang="scss">
 .wrapper {

@@ -1,10 +1,10 @@
 @import './fonts.scss';
 @import './reset.scss';
 @import './colors.scss';
+@import './/components/primaryBtn.scss';
 
 body {
   font-family: 'MuseoSans';
-  background-color: $gray-50;
   max-width: 1440px;
   margin: 0 auto;
 }

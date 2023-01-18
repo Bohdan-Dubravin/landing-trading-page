@@ -11,16 +11,13 @@
       <span class="nav__bar"></span>
     </div>
 
-    <VioletButton>
-      <a href="#contact" class="">sign in for free</a></VioletButton
-    >
+    <a href="#contact" class="btn-primary btn-wrapper">sign in for free</a>
   </header>
 </template>
 <script>
-import NavBar from './NavBar.vue';
-import VioletButton from './UI/VioletButton.vue';
+import NavBar from './NavBar.vue'
 
-export default { components: { NavBar, VioletButton } };
+export default { components: { NavBar } }
 </script>
 <style lang="scss">
 .header {
@@ -37,5 +34,10 @@ export default { components: { NavBar, VioletButton } };
   text-decoration: none;
   padding: 30px 60px;
   font-weight: 900;
+}
+
+.btn-wrapper {
+  width: 167px;
+  height: 40px;
 }
 </style>
