@@ -23,14 +23,14 @@ export default {
   data() {
     return {
       visible: null,
-    }
+    };
   },
   methods: {
     open(id) {
       if (this.visible === id) {
-        this.visible = null
+        this.visible = null;
       } else {
-        this.visible = id
+        this.visible = id;
       }
     },
     // start(el) {
@@ -40,7 +40,7 @@ export default {
     //   el.style.height = ''
     // },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -52,15 +52,15 @@ export default {
     margin-bottom: 16px;
   }
   &__content {
-    transition: all 0.2s linear;
+    transition: max-height 0.5s opacity 0.5s linear;
     max-height: 0;
     opacity: 0;
     visibility: hidden;
   }
 
   &__content--active {
-    transition: all 0.5s linear;
-    max-height: 200px;
+    transition: max-height 0.5s opacity 0.5s linear;
+    max-height: 1000px;
     opacity: 1;
     visibility: visible;
   }
