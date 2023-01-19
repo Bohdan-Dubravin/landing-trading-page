@@ -1,9 +1,21 @@
 <template>
   <ul class="accordion">
-    <li v-for="item in items" class="accordion__item" :key="item.id">
-      <div class="accordion__trigger" @click="open(item.id)">
-        <h4>{{ item.title }}</h4>
-        <button>X</button>
+    <li
+      v-for="item in items"
+      @click="open(item.id)"
+      class="accordion__item"
+      :key="item.id"
+    >
+      <div class="accordion__trigger">
+        <h4 class="accordion__title">{{ item.title }}</h4>
+        <img
+          src="@/assets/plus-icon.svg"
+          alt="pen-close-icon"
+          class="accordion__btn"
+          :class="{
+            'accordion__btn--active': visible === item.id,
+          }"
+        />
       </div>
       <div
         class="accordion__content"
@@ -11,7 +23,7 @@
           'accordion__content--active': visible === item.id,
         }"
       >
-        <p>{{ item.text }}</p>
+        <p class="accordion__text">{{ item.text }}</p>
       </div>
     </li>
   </ul>
@@ -23,65 +35,73 @@ export default {
   data() {
     return {
       visible: null,
-    };
+    }
   },
   methods: {
     open(id) {
       if (this.visible === id) {
-        this.visible = null;
+        this.visible = null
       } else {
-        this.visible = id;
+        this.visible = id
       }
     },
-    // start(el) {
-    //   el.style.height = el.scrollHeight + 'px'
-    // },
-    // end(el) {
-    //   el.style.height = ''
-    // },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
 .accordion {
+  transition: max-height 2s linear;
   &__item {
     padding: 32px 40px;
     border: 2px solid $violet-500;
     border-radius: 20px;
     margin-bottom: 16px;
+    cursor: pointer;
   }
   &__content {
-    transition: max-height 0.5s opacity 0.5s linear;
+    transition: max-height 0.5s linear;
     max-height: 0;
     opacity: 0;
     visibility: hidden;
+    max-width: 750px;
   }
 
   &__content--active {
-    transition: max-height 0.5s opacity 0.5s linear;
+    transition: max-height 0.5s linear;
     max-height: 1000px;
     opacity: 1;
     visibility: visible;
   }
 
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: $gray-500;
+    max-width: 750px;
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 27px;
+    color: $gray-400;
+    padding-top: 24px;
+  }
+
   &__trigger {
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
+  }
+
+  &__btn {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.5s linear;
+    &--active {
+      transform: rotate(-45deg);
+    }
   }
 }
-
-/* .content-enter-active,
-.content-leave-active {
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.content-enter,
-.content-leave-to {
-  transition: all 0.3s ease;
-  height: 0 !important;
-  opacity: 0;
-} */
 </style>

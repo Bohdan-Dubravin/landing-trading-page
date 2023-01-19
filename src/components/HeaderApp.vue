@@ -2,9 +2,7 @@
   <header class="header">
     <a class="logo" href="#">LOGO</a>
     <NavBar />
-    <div class="nav__buttons-container">
-      <div class="nav__lang-select"></div>
-    </div>
+    <DropDownComponent />
     <div class="nav__hamburger" id="nav__hamburger">
       <span class="nav__bar"></span>
       <span class="nav__bar"></span>
@@ -16,8 +14,9 @@
 </template>
 <script>
 import NavBar from './NavBar.vue'
+import DropDownComponent from './ui/DropDownComponent.vue'
 
-export default { components: { NavBar } }
+export default { components: { NavBar, DropDownComponent } }
 </script>
 <style lang="scss">
 .header {
