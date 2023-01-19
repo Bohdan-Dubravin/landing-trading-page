@@ -26,17 +26,32 @@
       </div>
     </div>
     <div class="contact__form-container">
-      <FormComponent />
+      <p v-show="isSubmitted" class="contact__success-message">
+        We received your contacts
+      </p>
+      <FormComponent @formSubmitted="onFormSubmit" />
     </div>
+    <div class="bg-color-container"></div>
   </section>
 </template>
 <script>
 import FormComponent from './UI/FormComponent.vue';
 
-export default { components: { FormComponent } };
+export default {
+  components: { FormComponent },
+  data() {
+    return { isSubmitted: false };
+  },
+  methods: {
+    onFormSubmit() {
+      this.isSubmitted = true;
+    },
+  },
+};
 </script>
 <style lang="scss">
 .contact {
+  position: relative;
   padding: 120px;
   display: flex;
   justify-content: space-between;
@@ -85,13 +100,26 @@ export default { components: { FormComponent } };
   }
 
   &__form-container {
+    position: relative;
     flex-grow: 1;
     max-width: 585px;
-    max-height: 470px;
+    align-self: flex-start;
     background-color: #fff;
     border-radius: 20px;
     border: 2px solid $violet-500;
     padding: 80px;
+  }
+
+  &__success-message {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: #0eac00;
+    color: #fff;
+    padding: 7px 15px;
   }
 }
 </style>

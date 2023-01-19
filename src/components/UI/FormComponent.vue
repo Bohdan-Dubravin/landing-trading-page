@@ -1,24 +1,39 @@
 <template>
-  <Form class="form" @submit="submit" :validation-schema="registerSchema">
+  <Form
+    v-slot="{ meta }"
+    class="form"
+    @submit="submit"
+    :validation-schema="registerSchema"
+  >
     <div class="field">
-      <Field name="name" :rules="validateEmail" v-slot="{ field, errors }">
+      <Field
+        name="name"
+        :rules="validateEmail"
+        v-slot="{ field, errors, meta }"
+      >
         <input
+          placeholder="Name"
           v-bind="field"
           type="name"
           class="field__input"
-          :class="{ field__error: !!errors.length }"
+          :class="{ field__error: !!errors.length, field__valid: meta.valid }"
         />
       </Field>
       <ErrorMessage class="field__error-message" name="name" />
     </div>
 
     <div class="field">
-      <Field name="email" :rules="validateEmail" v-slot="{ field, errors }">
+      <Field
+        name="email"
+        :rules="validateEmail"
+        v-slot="{ field, errors, meta }"
+      >
         <input
+          placeholder="Email"
           v-bind="field"
           type="email"
           class="field__input"
-          :class="{ field__error: !!errors.length }"
+          :class="{ field__error: !!errors.length, field__valid: meta.valid }"
         />
       </Field>
       <ErrorMessage class="field__error-message" name="email" />
@@ -29,7 +44,7 @@
       placeholder="Message"
       name="message"
     />
-    <button class="btn-primary form__btn">Send</button>
+    <button :disabled="!meta.valid" class="btn-primary form__btn">Send</button>
   </Form>
 </template>
 <script>
@@ -45,6 +60,17 @@ export default {
     return {
       registerSchema,
     };
+  },
+  methods: {
+    submit(values, actions) {
+      actions.setValues({
+        name: '',
+        email: '',
+        password: '',
+      });
+
+      this.$emit('formSubmitted');
+    },
   },
 };
 </script>
@@ -91,6 +117,10 @@ export default {
   &__error {
     border: 1px solid #eb5757;
     font-size: 15px;
+  }
+
+  &__valid {
+    border: 1px solid #0eac00;
   }
 
   &::placeholder {
