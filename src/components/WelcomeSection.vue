@@ -54,6 +54,15 @@ export default {};
 
   &__title {
     margin-bottom: 32px;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onMobile {
+      text-align: left;
+      max-width: 260px;
+    }
   }
 
   &__description {
@@ -63,11 +72,30 @@ export default {};
     color: $gray-400;
     max-width: 420px;
     margin-bottom: 48px;
+
+    @include onTablet {
+      text-align: center;
+      max-width: 460px;
+      margin: 0 auto 48px;
+    }
+
+    @include onMobile {
+      text-align: left;
+      margin-bottom: 32px;
+    }
   }
 
   &__btn {
     width: 257px;
     height: 54px;
+
+    @include onTablet {
+      margin: 0 auto;
+    }
+
+    @include onMobile {
+      width: 100%;
+    }
   }
 }
 
@@ -77,11 +105,18 @@ export default {};
   transform: translateY(-30px);
 
   @include onTablet {
-    flex-direction: column;
-    width: 200px;
+    width: 100%;
     transform: translateY(0);
+    margin-top: 32px;
+    max-width: 420px;
   }
 
+  @include onMobile {
+    width: 100%;
+    transform: translateY(0);
+    margin-top: 32px;
+    max-width: 300px;
+  }
   &__img {
     width: 100%;
     height: 100%;

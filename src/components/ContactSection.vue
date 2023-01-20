@@ -65,6 +65,7 @@ export default {
     flex-direction: column;
     padding: 48px 20px;
   }
+
   &__title {
     margin-bottom: 32px;
   }
@@ -75,6 +76,7 @@ export default {
 
     @include onTablet {
       margin-bottom: 48px;
+      max-width: 100%;
     }
 
     @include onMobile {
@@ -132,6 +134,7 @@ export default {
 
     @include onTablet {
       width: 100%;
+      max-width: 100%;
       padding: 80px 42px;
     }
   }
