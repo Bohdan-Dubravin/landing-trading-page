@@ -1,7 +1,7 @@
 <template>
   <footer class="container">
     <div class="footer">
-      <h2 class="footer__logo">LOGO</h2>
+      <a href="#" class="footer__logo">LOGO</a>
       <div class="footer__info">
         <h3 class="footer__info-title">Information and high risk warning:</h3>
         <p class="footer__info-text">
@@ -31,7 +31,7 @@
             <a class="footer__nav-link" href="#questions">About Us</a>
           </li>
           <li class="footer__nav-item">
-            <a class="footer__nav-link" href="#instructions">Instructions</a>
+            <a class="footer__nav-link" href="#steps">Instructions</a>
           </li>
           <li class="footer__nav-item">
             <a class="footer__nav-link" href="#contact">Platforms</a>
@@ -70,7 +70,7 @@
   </footer>
 </template>
 <script>
-export default {};
+export default {}
 </script>
 <style lang="scss" scoped>
 .container {
@@ -95,6 +95,7 @@ export default {};
 
   @include onTablet {
     flex-direction: column;
+    margin-bottom: 12px;
   }
 
   &__logo {
@@ -102,6 +103,7 @@ export default {};
     font-size: 15px;
     line-height: 16px;
     margin-right: auto;
+    color: $gray-500;
 
     @include onMobile {
       margin: 0 auto 46px;
@@ -121,6 +123,7 @@ export default {};
     @include onTablet {
       order: 2;
       max-width: 100%;
+      margin-bottom: 24px;
     }
     @include onMobile {
       order: 2;
@@ -182,6 +185,10 @@ export default {};
 
   &__nav-item {
     margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__nav-link {

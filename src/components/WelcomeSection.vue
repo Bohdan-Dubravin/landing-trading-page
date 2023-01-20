@@ -9,9 +9,7 @@
         MetaTrader4 is the most popular and convenient platform for access to
         global exchanges. You can work anywhere.
       </p>
-      <a href="#form-section" class="btn-primary info-section__btn"
-        >Start Trading</a
-      >
+      <a href="#contact" class="btn-primary info-section__btn">Start Trading</a>
     </div>
     <div class="logo-container">
       <img

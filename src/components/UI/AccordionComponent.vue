@@ -108,8 +108,8 @@ export default {
     position: relative;
     width: 18px;
     height: 18px;
-    top: 2px;
-    transition: transform 0.5s linear;
+    top: 3px;
+    transition: transform 0.2s linear;
     &--active {
       transform: rotate(-45deg);
     }

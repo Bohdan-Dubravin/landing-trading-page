@@ -8,14 +8,12 @@
     </div>
     <div class="menu-overlay" v-if="isOpen"></div>
     <div class="menu" :class="{ menu__open: isOpen }">
-      <div>
+      <div class="hamburger__select-lang">
         <SelectComponent />
       </div>
       <NavBar />
       <div class="menu__link">
-        <a href="#contact" class="btn-primary header__btn-wrapper"
-          >sign in for free</a
-        >
+        <a href="#contact" class="btn-primary">sign in for free</a>
       </div>
     </div>
   </div>
@@ -25,7 +23,6 @@
 import NavBar from '@/components/NavBar.vue'
 import SelectComponent from '@/components/UI/SelectComponent.vue'
 export default {
-  name: 'HamburgerMenu',
   components: { NavBar, SelectComponent },
   data() {
     return {
@@ -79,6 +76,10 @@ export default {
       height: 0;
       position: relative;
     }
+  }
+
+  &__select-lang {
+    margin-bottom: 20px;
   }
 }
 

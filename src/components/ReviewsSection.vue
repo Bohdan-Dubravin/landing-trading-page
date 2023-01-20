@@ -28,7 +28,7 @@
           :class="{ active: review.id === currentSlide }"
         >
           <div class="comment-header">
-            <img class="comment-image" :src="review.image" />
+            <img class="comment-image" :src="review.image" alt="person-ing" />
             <div>
               <h3 class="comment-name">{{ review.name }}</h3>
               <p class="comment-position">{{ review.position }}</p>
@@ -72,28 +72,32 @@ export default {
           name: 'Albert Abello',
           position: 'Director of Growth',
           text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsam accusantium culpa facere quia facilis quibusdam asperiores cumque repellat sed!',
-          image: 'src/assets/person1.png',
+          image:
+            'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
         },
         {
           id: 2,
           name: 'Daniel Smt',
           position: 'Designer',
           text: 'lorem  It has radically changed the way we build our audiences. Increasing new customer sales by 6x in our most mature market.',
-          image: 'src/assets/person2.webp',
+          image:
+            'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80',
         },
         {
           id: 3,
           name: 'Third Person',
           position: 'SEO',
           text: 'This magical product   It has radically changed the way we build our audiences. Increasing new customer sales by 6x in our most mature market.',
-          image: 'src/assets/person3.jfif',
+          image:
+            'https://st2.depositphotos.com/3143277/8644/i/600/depositphotos_86446164-stock-photo-business-man-in-office.jpg',
         },
         {
           id: 4,
           name: 'Fourth Person',
           position: 'Tech director',
           text: 'This magical product actually works! It has radically changed the way we build our audiences. Increasing new customer sales by 6x in our',
-          image: 'src/assets/person4.jpg',
+          image:
+            'https://st2.depositphotos.com/1662991/8837/i/450/depositphotos_88370500-stock-photo-mechanic-wearing-overalls.jpg',
         },
       ],
       currentSlide: 1,
@@ -172,6 +176,9 @@ export default {
   }
 
   &__arrows {
+    @include onTablet {
+      display: none !important;
+    }
   }
 
   &__btn {

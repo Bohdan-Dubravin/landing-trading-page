@@ -1,19 +1,21 @@
 <template>
-  <button class="btn" @click.stop="dropIt" :class="{ btn__open: isDropped }">
-    {{ this.buttonText }}
-  </button>
-  <transition name="slide">
-    <ul class="list" v-if="isDropped">
-      <li
-        class="list__item"
-        v-for="item in items"
-        :key="item"
-        @click="selectOption(item)"
-      >
-        {{ item }}
-      </li>
-    </ul>
-  </transition>
+  <div class="select-container">
+    <button class="btn" @click.stop="dropIt" :class="{ btn__open: isDropped }">
+      {{ this.buttonText }}
+    </button>
+    <transition name="slide">
+      <ul class="list" v-if="isDropped">
+        <li
+          class="list__item"
+          v-for="item in items"
+          :key="item"
+          @click="selectOption(item)"
+        >
+          {{ item }}
+        </li>
+      </ul>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -39,6 +41,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.select-container {
+  position: relative;
+}
 .btn {
   width: 80px;
   height: 40px;
@@ -65,7 +70,6 @@ export default {
 .list {
   position: absolute;
   width: 204px;
-  margin-top: 20px;
   list-style-type: none;
   transform-origin: top;
   transition: transform 0.4s ease-in-out;

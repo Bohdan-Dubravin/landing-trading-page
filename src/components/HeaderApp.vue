@@ -3,7 +3,6 @@
     <a class="header__logo" href="#">LOGO</a>
     <NavBar class="header__nav-bar" />
     <div class="header__select-lang"><SelectComponent /></div>
-
     <a href="#contact" class="btn-primary header__btn-wrapper"
       >sign in for free</a
     >
@@ -47,6 +46,7 @@ export default {
 
   &__select-lang {
     display: block;
+    margin: 0 24px 0 auto;
     @include onTablet {
       display: none;
     }
