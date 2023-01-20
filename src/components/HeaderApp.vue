@@ -2,21 +2,15 @@
   <header class="header">
     <a class="logo" href="#">LOGO</a>
     <NavBar />
-    <DropDownComponent />
-    <div class="nav__hamburger" id="nav__hamburger">
-      <span class="nav__bar"></span>
-      <span class="nav__bar"></span>
-      <span class="nav__bar"></span>
-    </div>
-
+    <SelectCOmponent />
     <a href="#contact" class="btn-primary btn-wrapper">sign in for free</a>
   </header>
 </template>
 <script>
-import NavBar from './NavBar.vue'
-import DropDownComponent from './ui/DropDownComponent.vue'
+import NavBar from './NavBar.vue';
+import SelectCOmponent from './UI/SelectComponent.vue';
 
-export default { components: { NavBar, DropDownComponent } }
+export default { components: { NavBar, SelectCOmponent } };
 </script>
 <style lang="scss">
 .header {

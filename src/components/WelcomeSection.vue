@@ -1,7 +1,9 @@
 <template>
   <section class="container" id="welcome-section">
     <div class="info-section">
-      <h1 class="info-section__title">Trade everywhere. Invest here!</h1>
+      <h1 class="info-section__title section-title">
+        Trade everywhere. Invest here!
+      </h1>
       <p class="info-section__description">
         We provide only the best trading software. The trading terminal
         MetaTrader4 is the most popular and convenient platform for access to
@@ -22,28 +24,35 @@
   </section>
 </template>
 <script>
-export default {}
+export default {};
 </script>
 <style lang="scss">
 .container {
-  height: 720px;
   padding: 100px 120px;
   display: flex;
   justify-content: space-between;
   position: relative;
+
+  @include onTablet {
+    flex-direction: column;
+    padding: 40px;
+    align-items: center;
+    justify-content: baseline;
+  }
+  @include onMobile {
+    flex-direction: column;
+    padding: 32px 20px 40px;
+    justify-content: baseline;
+  }
 }
 
 .info-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 585px;
+  max-width: 585px;
 
   &__title {
-    font-size: 64px;
-    color: $gray-500;
-    line-height: 72px;
-    font-weight: 500;
     margin-bottom: 32px;
   }
 
@@ -66,6 +75,13 @@ export default {}
   width: 480px;
   height: 520px;
   transform: translateY(-30px);
+
+  @include onTablet {
+    flex-direction: column;
+    width: 200px;
+    transform: translateY(0);
+  }
+
   &__img {
     width: 100%;
     height: 100%;

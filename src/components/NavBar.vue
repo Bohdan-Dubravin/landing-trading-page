@@ -26,6 +26,14 @@ export default {};
 <style lang="scss">
 .nav__bar {
   display: flex;
+
+  @include onMobile {
+    display: none;
+  }
+
+  @include onTablet {
+    display: none;
+  }
 }
 
 .nav_item {

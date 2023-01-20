@@ -56,6 +56,15 @@ export default {
   display: flex;
   justify-content: space-between;
 
+  @include onTablet {
+    flex-direction: column;
+    padding: 48px 130px;
+  }
+
+  @include onMobile {
+    flex-direction: column;
+    padding: 48px 20px;
+  }
   &__title {
     margin-bottom: 32px;
   }
@@ -63,8 +72,15 @@ export default {
   &__info-container {
     color: $gray-400;
     max-width: 470px;
-  }
 
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
+    @include onMobile {
+      margin-bottom: 48px;
+    }
+  }
   &__info {
     margin-bottom: 48px;
     font-weight: 300;
@@ -108,6 +124,16 @@ export default {
     border-radius: 20px;
     border: 2px solid $violet-500;
     padding: 80px;
+
+    @include onMobile {
+      width: 100%;
+      padding: 48px 16px;
+    }
+
+    @include onTablet {
+      width: 100%;
+      padding: 80px 42px;
+    }
   }
 
   &__success-message {

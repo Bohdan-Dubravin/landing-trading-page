@@ -70,7 +70,7 @@
   </footer>
 </template>
 <script>
-export default {}
+export default {};
 </script>
 <style lang="scss" scoped>
 .container {
@@ -78,6 +78,10 @@ export default {}
   height: fit-content;
   display: flex;
   flex-direction: column;
+
+  @include onMobile {
+    padding: 46px 20px 20px 32px;
+  }
 }
 
 .footer {
@@ -85,11 +89,27 @@ export default {}
   width: 100%;
   margin-bottom: 48px;
 
+  @include onMobile {
+    flex-direction: column;
+  }
+
+  @include onTablet {
+    flex-direction: column;
+  }
+
   &__logo {
     font-weight: 900;
     font-size: 15px;
     line-height: 16px;
     margin-right: auto;
+
+    @include onMobile {
+      margin: 0 auto 46px;
+    }
+
+    @include onTablet {
+      margin: 0 auto 56px;
+    }
   }
 
   &__info {
@@ -98,8 +118,24 @@ export default {}
     font-size: 18px;
     line-height: 30px;
 
+    @include onTablet {
+      order: 2;
+      max-width: 100%;
+    }
+    @include onMobile {
+      order: 2;
+      max-width: 100%;
+    }
+
     &:first-child {
       margin-right: 30px;
+
+      @include onTablet {
+        margin-bottom: 32px;
+      }
+      @include onMobile {
+        margin-bottom: 24px;
+      }
     }
   }
 
@@ -120,11 +156,28 @@ export default {}
 
   &__nav {
     margin-left: 96px;
+
+    @include onTablet {
+      margin: 0;
+      margin-bottom: 40px;
+    }
+    @include onMobile {
+      margin: 0;
+      margin-bottom: 32px;
+    }
   }
 
   &__nav-list {
     display: flex;
     flex-direction: column;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @include onMobile {
+      flex-direction: column;
+    }
   }
 
   &__nav-item {
@@ -148,6 +201,16 @@ export default {}
   &__list {
     display: flex;
     justify-content: space-between;
+
+    @include onMobile {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include onTablet {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__text {
@@ -155,6 +218,14 @@ export default {}
     font-size: 16px;
     line-height: 27px;
     color: $gray-300;
+
+    @include onMobile {
+      margin-bottom: 16px;
+    }
+
+    @include onTablet {
+      margin-bottom: 16px;
+    }
   }
 }
 </style>

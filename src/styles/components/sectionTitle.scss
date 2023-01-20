@@ -3,4 +3,9 @@
   font-weight: 700;
   font-size: 56px;
   line-height: 66px;
+
+  @include onMobile {
+    font-size: 40px;
+    line-height: 44px;
+  }
 }

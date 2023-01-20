@@ -5,7 +5,7 @@
   </section>
 </template>
 <script>
-import AccordionComponent from '@/components/ui/AccordionComponent.vue'
+import AccordionComponent from '@/components/ui/AccordionComponent.vue';
 
 export default {
   components: { AccordionComponent },
@@ -84,18 +84,34 @@ export default {
                 Use only the best and develop with us!`,
         },
       ],
-    }
+    };
   },
-}
+};
 </script>
 <style lang="scss">
 .questions {
-  padding-bottom: 140px;
+  padding: 140px 120px;
+
+  @include onTablet {
+    padding: 120px 40px;
+  }
+
+  @include onMobile {
+    padding: 80px 20px;
+  }
 
   &__title {
     max-width: 480px;
     position: relative;
     margin-bottom: 68px;
+
+    @include onTablet {
+      margin-bottom: 56px;
+    }
+
+    @include onMobile {
+      margin-bottom: 40px;
+    }
 
     &::after {
       content: '';
@@ -103,8 +119,13 @@ export default {
       position: absolute;
       background: #6248ff;
       opacity: 0.1;
-      width: 25px;
+      width: 256px;
       height: 80px;
+
+      @include onMobile {
+        width: 183px;
+        height: 50px;
+      }
     }
   }
 }

@@ -48,13 +48,21 @@ export default {
           text: 'Once your deposit has been credited, you can begin trading instantly. In no time you will see profits rolling into your account.',
         },
       ],
-    }
+    };
   },
-}
+};
 </script>
 <style lang="scss">
 .steps-section {
   padding: 140px 120px;
+
+  @include onTablet {
+    padding: 0 40px;
+  }
+
+  @include onMobile {
+    padding: 0 20px;
+  }
 }
 
 .steps {
@@ -85,7 +93,14 @@ export default {
     gap: 105px 134px;
     position: relative;
     max-width: 1100px;
-    margin-bottom: 320px;
+
+    @include onTablet {
+      gap: 105px 30px;
+    }
+
+    @include onMobile {
+      display: block;
+    }
   }
 }
 
@@ -97,8 +112,16 @@ export default {
   padding: 32px;
   background-color: #fff;
 
+  @include onMobile {
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+
   &--top {
     top: 150px;
+    @include onMobile {
+      top: 0;
+    }
   }
 
   &--leftLine {
@@ -114,6 +137,12 @@ export default {
       top: 40%;
       z-index: -1;
     }
+
+    @include onMobile {
+      &::after {
+        display: none;
+      }
+    }
   }
 
   &--rightLine {
@@ -128,6 +157,12 @@ export default {
       left: -85%;
       top: 40%;
       z-index: -1;
+    }
+
+    @include onMobile {
+      &::before {
+        display: none;
+      }
     }
   }
 

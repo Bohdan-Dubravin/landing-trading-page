@@ -16,6 +16,8 @@
           <p class="drop-down__option-text">GN</p>
         </li>
       </ul>
+      <div class="border-top"></div>
+      <div class="border-bottom"></div>
     </div>
   </div>
 </template>
@@ -24,35 +26,36 @@ export default {
   data() {
     return {
       isOpen: false,
-    }
+    };
   },
-
   methods: {
     toggleOpen() {
-      this.isOpen = !this.isOpen
+      this.isOpen = !this.isOpen;
     },
   },
-}
+};
 </script>
-<style lang="scss">
+<style scope lang="scss">
 .component-container {
   position: relative;
   width: 80px;
   height: 40px;
-  transition: all 0.5s ease-in;
 }
+
 .drop-down {
   position: absolute;
+  background: #fff;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  min-height: 40px;
-  border: 1px solid #000;
-  border-radius: 60px;
-  transition: all 0.5s ease-in;
+  height: 40px;
+
+  transition: height 0.5s ease-in;
+  overflow: hidden;
 
   &--open {
+    height: 150px;
   }
 
   &__chosen-option {
@@ -60,30 +63,47 @@ export default {
     font-weight: 700;
     font-size: 15px;
     line-height: 16px;
-    color: $gray-500;
     margin-top: 12px;
+    color: $gray-500;
   }
 
   &__options-list {
-    transition: all 0.5s ease-in;
-    padding-top: 20px;
-    margin-left: 16px;
-    background-color: white;
-    max-height: 0;
-    overflow-y: hidden;
-  }
-
-  &__options-list--open {
-    max-height: 1000px;
-    transition: all 0.5s ease-in;
-    background-color: $gray-100;
+    transform: translateY(20px);
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    margin-left: 10px;
   }
 
   &__option {
     margin-bottom: 16px;
   }
-
   &__option-text {
+  }
+
+  .border-top {
+    position: absolute;
+    border-top: 1px solid #000;
+    border-top-right-radius: 60px;
+    border-top-left-radius: 60px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  .border-bottom {
+    position: absolute;
+    border-bottom: 1px solid #000;
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    width: 100%;
+    pointer-events: none;
   }
 }
 </style>
