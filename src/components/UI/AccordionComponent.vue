@@ -53,11 +53,15 @@ export default {
 .accordion {
   transition: max-height 2s linear;
   &__item {
-    padding: 32px 40px;
+    padding: 32px 32px;
     border: 2px solid $violet-500;
     border-radius: 20px;
     margin-bottom: 16px;
     cursor: pointer;
+
+    @include onMobile {
+      padding: 24px;
+    }
   }
   &__content {
     transition: max-height 0.5s linear;
@@ -80,6 +84,11 @@ export default {
     line-height: 29px;
     color: $gray-500;
     max-width: 750px;
+
+    @include onMobile {
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 
   &__text {
@@ -96,8 +105,10 @@ export default {
   }
 
   &__btn {
+    position: relative;
     width: 18px;
     height: 18px;
+    top: 2px;
     transition: transform 0.5s linear;
     &--active {
       transform: rotate(-45deg);

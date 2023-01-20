@@ -4,16 +4,16 @@
       <a class="nav_link" href="#questions">How it works</a>
     </li>
     <li class="nav_item">
-      <a class="nav_link" href="#instructions">About</a>
+      <a class="nav_link" href="#comments">About</a>
     </li>
     <li class="nav_item">
-      <a class="nav_link" href="#instructions">Instructions</a>
+      <a class="nav_link" href="#steps">Instructions</a>
     </li>
     <li class="nav_item">
-      <a class="nav_link" href="#">Accounts</a>
+      <a class="nav_link" href="#contact">Accounts</a>
     </li>
     <li class="nav_item">
-      <a class="nav_link" href="#">Platforms</a>
+      <a class="nav_link" href="#contact">Platforms</a>
     </li>
     <li class="nav_item">
       <a class="nav_link" href="#contact">Contact</a>
@@ -21,23 +21,31 @@
   </ul>
 </template>
 <script>
-export default {};
+export default {}
 </script>
 <style lang="scss">
 .nav__bar {
   display: flex;
 
-  @include onMobile {
-    display: none;
+  @include onTablet {
+    flex-direction: column;
   }
 
-  @include onTablet {
-    display: none;
+  @include onMobile {
+    flex-direction: column;
   }
 }
 
 .nav_item {
   margin-right: 32px;
+
+  @include onTablet {
+    margin-bottom: 16px;
+  }
+
+  @include onMobile {
+    margin-bottom: 16px;
+  }
 
   &:last-child {
     margin-right: 0;

@@ -24,9 +24,9 @@
   </section>
 </template>
 <script>
-export default {};
+export default {}
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
   padding: 100px 120px;
   display: flex;
@@ -101,7 +101,6 @@ export default {};
 
 .logo-container {
   width: 480px;
-  height: 520px;
   transform: translateY(-30px);
 
   @include onTablet {
@@ -134,5 +133,8 @@ export default {};
   z-index: -1;
   width: 100%;
   height: 100%;
+  @include onMobile {
+    background: #4f62f6;
+  }
 }
 </style>

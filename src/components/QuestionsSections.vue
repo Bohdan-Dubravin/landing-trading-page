@@ -5,7 +5,7 @@
   </section>
 </template>
 <script>
-import AccordionComponent from '@/components/ui/AccordionComponent.vue';
+import AccordionComponent from '@/components/UI/AccordionComponent.vue'
 
 export default {
   components: { AccordionComponent },
@@ -84,9 +84,9 @@ export default {
                 Use only the best and develop with us!`,
         },
       ],
-    };
+    }
   },
-};
+}
 </script>
 <style lang="scss">
 .questions {
@@ -95,7 +95,6 @@ export default {
   @include onTablet {
     padding: 120px 40px;
   }
-
   @include onMobile {
     padding: 80px 20px;
   }

@@ -27,7 +27,7 @@
     </div>
     <div class="contact__form-container">
       <p v-show="isSubmitted" class="contact__success-message">
-        We received your contacts
+        We contact you soon
       </p>
       <FormComponent @formSubmitted="onFormSubmit" />
     </div>
@@ -35,19 +35,19 @@
   </section>
 </template>
 <script>
-import FormComponent from './UI/FormComponent.vue';
+import FormComponent from './UI/FormComponent.vue'
 
 export default {
   components: { FormComponent },
   data() {
-    return { isSubmitted: false };
+    return { isSubmitted: false }
   },
   methods: {
     onFormSubmit() {
-      this.isSubmitted = true;
+      this.isSubmitted = true
     },
   },
-};
+}
 </script>
 <style lang="scss">
 .contact {
@@ -60,7 +60,6 @@ export default {
     flex-direction: column;
     padding: 48px 130px;
   }
-
   @include onMobile {
     flex-direction: column;
     padding: 48px 20px;
@@ -127,21 +126,20 @@ export default {
     border: 2px solid $violet-500;
     padding: 80px;
 
-    @include onMobile {
-      width: 100%;
-      padding: 48px 16px;
-    }
-
     @include onTablet {
       width: 100%;
       max-width: 100%;
       padding: 80px 42px;
     }
+    @include onMobile {
+      width: 100%;
+      padding: 48px 16px;
+    }
   }
 
   &__success-message {
     position: absolute;
-    top: 15px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     font-weight: 700;
@@ -149,6 +147,23 @@ export default {
     background-color: #0eac00;
     color: #fff;
     padding: 7px 15px;
+    min-width: 190px;
+  }
+}
+
+.bg-color-container {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: $violet-500;
+  opacity: 0.1;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  @include onMobile {
+    background: #4f62f6;
   }
 }
 </style>

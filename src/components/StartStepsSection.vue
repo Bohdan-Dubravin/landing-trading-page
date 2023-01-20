@@ -1,7 +1,7 @@
 <template>
   <section class="steps-section" id="steps">
     <div class="wrapper">
-      <h2 class="steps__title">Getting Started Is Fast & Easy</h2>
+      <h2 class="steps__title section-title">Getting Started Is Fast & Easy</h2>
       <div class="steps__steps-list">
         <div
           class="step"
@@ -48,42 +48,58 @@ export default {
           text: 'Once your deposit has been credited, you can begin trading instantly. In no time you will see profits rolling into your account.',
         },
       ],
-    };
+    }
   },
-};
+}
 </script>
 <style lang="scss">
 .steps-section {
   padding: 140px 120px;
 
   @include onTablet {
-    padding: 0 40px;
+    padding: 120px 40px;
   }
 
   @include onMobile {
-    padding: 0 20px;
+    padding: 80px 20px;
   }
 }
 
 .steps {
   &__title {
     position: relative;
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 66px;
     max-width: 480px;
     margin-bottom: 68px;
+
+    @include onTablet {
+      max-width: 420px;
+      margin-bottom: 48px;
+    }
+
+    @include onMobile {
+      max-width: 260px;
+      margin-bottom: 32px;
+    }
+
     &::after {
       position: absolute;
       width: 290px;
       content: '';
-      top: 50%;
+      top: 70%;
       left: 0;
       right: 0;
       bottom: -10px;
       background-color: $violet-500;
       opacity: 0.1;
       z-index: -1;
+
+      @include onTablet {
+        width: 345px;
+      }
+
+      @include onMobile {
+        width: 205px;
+      }
     }
   }
 

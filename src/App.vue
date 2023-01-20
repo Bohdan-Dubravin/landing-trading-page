@@ -4,7 +4,7 @@
     <main>
       <WelcomeSection />
       <StartStepsSection />
-      <!-- <ReviewsSection /> -->
+      <ReviewsSection />
       <QuestionsSections />
       <ContactSection />
     </main>
@@ -12,13 +12,13 @@
   <FooterApp />
 </template>
 <script>
-import ContactSection from './components/ContactSection.vue';
-import FooterApp from './components/FooterApp.vue';
-import HeaderApp from './components/HeaderApp.vue';
-import QuestionsSections from './components/QuestionsSections.vue';
-import ReviewsSection from './components/ReviewsSection.vue';
-import StartStepsSection from './components/StartStepsSection.vue';
-import WelcomeSection from './components/WelcomeSection.vue';
+import ContactSection from './components/ContactSection.vue'
+import FooterApp from './components/FooterApp.vue'
+import HeaderApp from './components/HeaderApp.vue'
+import QuestionsSections from './components/QuestionsSections.vue'
+import ReviewsSection from './components/ReviewsSection.vue'
+import StartStepsSection from './components/StartStepsSection.vue'
+import WelcomeSection from './components/WelcomeSection.vue'
 
 export default {
   components: {
@@ -30,7 +30,7 @@ export default {
     ContactSection,
     FooterApp,
   },
-};
+}
 </script>
 <style lang="scss">
 .wrapper {

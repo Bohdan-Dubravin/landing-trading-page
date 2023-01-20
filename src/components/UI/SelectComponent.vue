@@ -1,109 +1,99 @@
 <template>
-  <div class="component-container">
-    <div class="drop-down" :class="{ 'drop-down--open': isOpen }">
-      <h3 @click="toggleOpen" class="drop-down__chosen-option">EN</h3>
-      <ul
-        class="drop-down__options-list"
-        :class="{ 'drop-down__options-list--open': isOpen }"
+  <button class="btn" @click.stop="dropIt" :class="{ btn__open: isDropped }">
+    {{ this.buttonText }}
+  </button>
+  <transition name="slide">
+    <ul class="list" v-if="isDropped">
+      <li
+        class="list__item"
+        v-for="item in items"
+        :key="item"
+        @click="selectOption(item)"
       >
-        <li class="drop-down__option">
-          <p class="drop-down__option-text">RU</p>
-        </li>
-        <li class="drop-down__option">
-          <p class="drop-down__option-text">UA</p>
-        </li>
-        <li class="drop-down__option">
-          <p class="drop-down__option-text">GN</p>
-        </li>
-      </ul>
-      <div class="border-top"></div>
-      <div class="border-bottom"></div>
-    </div>
-  </div>
+        {{ item }}
+      </li>
+    </ul>
+  </transition>
 </template>
+
 <script>
 export default {
-  data() {
+  data: function () {
     return {
+      isDropped: false,
       isOpen: false,
-    };
+      buttonText: 'EN',
+      items: ['RU', 'DE', 'UA'],
+    }
   },
   methods: {
-    toggleOpen() {
-      this.isOpen = !this.isOpen;
+    dropIt() {
+      this.isDropped = !this.isDropped
+    },
+    selectOption(item) {
+      this.buttonText = item
+      this.dropIt()
     },
   },
-};
+}
 </script>
-<style scope lang="scss">
-.component-container {
-  position: relative;
+
+<style lang="scss" scoped>
+.btn {
   width: 80px;
   height: 40px;
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 60px;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 16px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 16px;
+  z-index: 5;
+  position: relative;
+
+  &__open {
+    border-radius: 20px 20px 0 0;
+    border-bottom: 1px solid #000;
+  }
 }
 
-.drop-down {
+.list {
   position: absolute;
-  background: #fff;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 40px;
-
-  transition: height 0.5s ease-in;
+  width: 204px;
+  margin-top: 20px;
+  list-style-type: none;
+  transform-origin: top;
+  transition: transform 0.4s ease-in-out;
   overflow: hidden;
+  border-radius: 0 0 20px 20px;
+  border: 1px solid #000;
+  border-top: none;
+  width: 80px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 16px;
+  top: 36px;
+  z-index: 3;
 
-  &--open {
-    height: 150px;
+  &__item {
+    padding: 10px 16px;
+    background: white;
+    cursor: pointer;
   }
+}
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.5s ease;
+}
 
-  &__chosen-option {
-    margin-left: 16px;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 16px;
-    margin-top: 12px;
-    color: $gray-500;
-  }
-
-  &__options-list {
-    transform: translateY(20px);
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-    margin-left: 10px;
-  }
-
-  &__option {
-    margin-bottom: 16px;
-  }
-  &__option-text {
-  }
-
-  .border-top {
-    position: absolute;
-    border-top: 1px solid #000;
-    border-top-right-radius: 60px;
-    border-top-left-radius: 60px;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 20px;
-    width: 100%;
-    pointer-events: none;
-  }
-
-  .border-bottom {
-    position: absolute;
-    border-bottom: 1px solid #000;
-    border-bottom-right-radius: 60px;
-    border-bottom-left-radius: 60px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 20px;
-    width: 100%;
-    pointer-events: none;
-  }
+.slide-enter-from,
+.slide-leave-to {
+  color: #fff;
+  transform: scaleY(0);
 }
 </style>
