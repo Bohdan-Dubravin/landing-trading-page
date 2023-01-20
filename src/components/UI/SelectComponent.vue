@@ -3,6 +3,12 @@
     <button class="btn" @click.stop="dropIt" :class="{ btn__open: isDropped }">
       {{ this.buttonText }}
     </button>
+    <img
+      class="arrow"
+      :class="{ 'arrow--open': isDropped }"
+      src="@/assets/arrow_down.svg"
+      alt="arrow-img"
+    />
     <transition name="slide">
       <ul class="list" v-if="isDropped">
         <li
@@ -25,7 +31,7 @@ export default {
       isDropped: false,
       isOpen: false,
       buttonText: 'EN',
-      items: ['RU', 'DE', 'UA'],
+      items: ['UA', 'GK', 'DE'],
     }
   },
   methods: {
@@ -43,6 +49,7 @@ export default {
 <style lang="scss" scoped>
 .select-container {
   position: relative;
+  width: 80px;
 }
 .btn {
   width: 80px;
@@ -90,6 +97,18 @@ export default {
     cursor: pointer;
   }
 }
+
+.arrow {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  transition: transform 0.2s linear;
+
+  &--open {
+    transform: rotate(-180deg);
+  }
+}
+
 .slide-enter-active,
 .slide-leave-active {
   transition: transform 0.5s ease;
