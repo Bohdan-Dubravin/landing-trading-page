@@ -1,5 +1,5 @@
 <template>
-  <div class="select-container">
+  <div class="select-container" v-click-out="closeDropDown">
     <button class="btn" @click.stop="dropIt" :class="{ btn__open: isDropped }">
       {{ this.buttonText }}
     </button>
@@ -41,6 +41,11 @@ export default {
     selectOption(item) {
       this.buttonText = item
       this.dropIt()
+    },
+
+    closeDropDown() {
+      this.isDropped = false
+      this.isOpen = false
     },
   },
 }

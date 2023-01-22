@@ -50,6 +50,10 @@ export default {
     @include onTablet {
       display: none;
     }
+
+    @include onLaptop {
+      margin: 0 5px 0 5px;
+    }
   }
 
   &__logo {

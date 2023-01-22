@@ -6,15 +6,11 @@
     :validation-schema="registerSchema"
   >
     <div class="field">
-      <Field
-        name="name"
-        :rules="validateEmail"
-        v-slot="{ field, errors, meta }"
-      >
+      <Field name="name" v-slot="{ field, errors, meta }">
         <input
           placeholder="Name"
           v-bind="field"
-          type="name"
+          type="text"
           class="field__input"
           :class="{ field__error: !!errors.length, field__valid: meta.valid }"
         />
@@ -23,11 +19,7 @@
     </div>
 
     <div class="field">
-      <Field
-        name="email"
-        :rules="validateEmail"
-        v-slot="{ field, errors, meta }"
-      >
+      <Field name="email" type="email" v-slot="{ field, errors, meta }">
         <input
           placeholder="Email"
           v-bind="field"
@@ -48,8 +40,8 @@
   </Form>
 </template>
 <script>
-import { registerSchema } from '@/utils/validation';
-import { Form, Field, ErrorMessage } from 'vee-validate';
+import { registerSchema } from '@/utils/validation'
+import { Form, Field, ErrorMessage } from 'vee-validate'
 export default {
   components: {
     Form,
@@ -59,7 +51,7 @@ export default {
   data() {
     return {
       registerSchema,
-    };
+    }
   },
   methods: {
     submit(values, actions) {
@@ -67,12 +59,12 @@ export default {
         name: '',
         email: '',
         password: '',
-      });
+      })
 
-      this.$emit('formSubmitted');
+      this.$emit('formSubmitted')
     },
   },
-};
+}
 </script>
 <style lang="scss" scoped>
 .form {

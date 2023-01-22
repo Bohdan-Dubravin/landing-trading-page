@@ -129,22 +129,31 @@ export default {
   align-items: center;
   padding: 140px 120px 0;
 
-  @include onMobile {
-    flex-direction: column;
-    padding: 140px 40px 0;
-  }
   @include onTablet {
     flex-direction: column;
     padding: 80px 20px 0;
+  }
+  @include onMobile {
+    flex-direction: column;
+    padding: 0px 40px 0;
   }
 
   &__title {
     position: relative;
     max-width: 483px;
     margin-bottom: 47px;
+    min-width: 410px;
+
+    @include onLaptop {
+      margin-right: 20px;
+    }
+
+    @include onTablet {
+      min-width: 0;
+    }
 
     @include onMobile {
-      width: 280px;
+      width: 225px;
       margin-bottom: 24px !important;
     }
 
@@ -154,7 +163,7 @@ export default {
       position: absolute;
       background: #6248ff;
       opacity: 0.1;
-      width: 290px;
+      width: 160px;
       height: 80px;
 
       @include onTablet {
@@ -163,7 +172,7 @@ export default {
       }
 
       @include onMobile {
-        width: 183px;
+        width: 185px;
         height: 50px;
       }
     }

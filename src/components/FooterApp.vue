@@ -89,7 +89,7 @@ export default {}
   width: 100%;
   margin-bottom: 48px;
 
-  @include onMobile {
+  @include onLaptop {
     flex-direction: column;
   }
 
@@ -98,19 +98,29 @@ export default {}
     margin-bottom: 12px;
   }
 
+  @include onMobile {
+    flex-direction: column;
+  }
+
   &__logo {
     font-weight: 900;
     font-size: 15px;
     line-height: 16px;
     margin-right: auto;
+    min-width: 80px;
     color: $gray-500;
 
-    @include onMobile {
-      margin: 0 auto 46px;
+    @include onLaptop {
+      margin: 0 auto 56px;
+      text-align: center;
     }
 
     @include onTablet {
       margin: 0 auto 56px;
+    }
+
+    @include onMobile {
+      margin: 0 auto 46px;
     }
   }
 
@@ -119,6 +129,12 @@ export default {}
     font-weight: 70;
     font-size: 18px;
     line-height: 30px;
+
+    @include onLaptop {
+      order: 2;
+      max-width: 100%;
+      margin-bottom: 24px;
+    }
 
     @include onTablet {
       order: 2;
@@ -174,10 +190,16 @@ export default {}
     display: flex;
     flex-direction: column;
 
+    @include onLaptop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
     @include onTablet {
       flex-direction: row;
       justify-content: space-between;
     }
+
     @include onMobile {
       flex-direction: column;
     }

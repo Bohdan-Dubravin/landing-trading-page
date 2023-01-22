@@ -73,6 +73,11 @@ export default {
     color: $gray-400;
     max-width: 470px;
 
+    @include onLaptop {
+      max-width: 350px;
+      margin-right: 20px;
+    }
+
     @include onTablet {
       margin-bottom: 48px;
       max-width: 100%;
@@ -125,6 +130,10 @@ export default {
     border-radius: 20px;
     border: 2px solid $violet-500;
     padding: 80px;
+
+    @include onLaptop {
+      padding: 40px 20px;
+    }
 
     @include onTablet {
       width: 100%;

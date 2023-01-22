@@ -77,7 +77,7 @@ export default {
     }
 
     @include onMobile {
-      max-width: 260px;
+      max-width: 230px;
       margin-bottom: 32px;
     }
 
@@ -88,7 +88,7 @@ export default {
       top: 55%;
       left: 0;
       right: 0;
-      bottom: -10px;
+      bottom: -5px;
       background-color: $violet-500;
       opacity: 0.1;
       z-index: -1;
@@ -98,6 +98,7 @@ export default {
       }
 
       @include onMobile {
+        top: 70%;
         width: 205px;
       }
     }

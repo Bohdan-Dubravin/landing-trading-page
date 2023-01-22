@@ -1,8 +1,12 @@
-import { createApp } from 'vue';
-import '@/styles/main.scss';
+import { createApp } from 'vue'
+import VueAos from 'vue-aos'
 
-import App from '@/App.vue';
+import '@/styles/main.scss'
+import App from '@/App.vue'
+import clickOutside from '@/directives/clickOutside'
 
-const app = createApp(App);
+const app = createApp(App)
+app.use(VueAos)
+app.directive('clickOut', clickOutside)
 
-createApp(App).mount('#app');
+app.mount('#app')
