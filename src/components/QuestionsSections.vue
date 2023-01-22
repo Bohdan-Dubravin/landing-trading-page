@@ -1,11 +1,18 @@
 <template>
   <section class="questions" id="questions">
-    <h2 class="section-title questions__title">Frequently asked questions</h2>
+    <h2
+    data-aos="fade-right"
+          data-aos-once="true"
+          data-aos-duration="1000"
+      class="section-title questions__title"
+    >
+      Frequently asked questions
+    </h2>
     <AccordionComponent :items="questions" />
   </section>
 </template>
 <script>
-import AccordionComponent from '@/components/UI/AccordionComponent.vue'
+import AccordionComponent from '@/components/UI/AccordionComponent.vue';
 
 export default {
   components: { AccordionComponent },
@@ -84,9 +91,9 @@ export default {
                 Use only the best and develop with us!`,
         },
       ],
-    }
+    };
   },
-}
+};
 </script>
 <style lang="scss">
 .questions {
@@ -127,5 +134,15 @@ export default {
       }
     }
   }
+}
+.before-enter {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 2s ease-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>

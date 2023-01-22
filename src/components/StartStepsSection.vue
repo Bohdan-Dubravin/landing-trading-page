@@ -1,7 +1,14 @@
 <template>
   <section class="steps-section" id="steps">
     <div class="wrapper">
-      <h2 class="steps__title section-title">Getting Started Is Fast & Easy</h2>
+      <h2
+        data-aos="fade-right"
+        data-aos-once="true"
+        data-aos-duration="1000"
+        class="steps__title section-title"
+      >
+        Getting Started Is Fast & Easy
+      </h2>
       <div class="steps__steps-list">
         <div
           class="step"
@@ -48,11 +55,29 @@ export default {
           text: 'Once your deposit has been credited, you can begin trading instantly. In no time you will see profits rolling into your account.',
         },
       ],
-    }
+    };
   },
-}
+};
 </script>
 <style lang="scss">
+@keyframes swing {
+  10% {
+    transform: rotate(10deg);
+  }
+
+  40% {
+    transform: rotate(-10deg);
+  }
+
+  60% {
+    transform: rotate(5deg);
+  }
+
+  80% {
+    transform: rotate(-5deg);
+  }
+}
+
 .steps-section {
   padding: 140px 120px;
 

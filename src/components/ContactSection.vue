@@ -1,6 +1,11 @@
 <template>
   <section class="contact" id="contact">
-    <div class="contact__info-container">
+    <div
+      data-aos="fade-right"
+      data-aos-once="true"
+      data-aos-duration="1000"
+      class="contact__info-container"
+    >
       <h2 class="section-title contact__title">Contact us!</h2>
       <p class="contact__info">
         The support staff and customer service are available to help you with
@@ -25,7 +30,12 @@
         </p>
       </div>
     </div>
-    <div class="contact__form-container">
+    <div
+      data-aos="fade-up"
+      data-aos-once="true"
+      data-aos-duration="1000"
+      class="contact__form-container"
+    >
       <p v-show="isSubmitted" class="contact__success-message">
         We contact you soon
       </p>
@@ -35,19 +45,19 @@
   </section>
 </template>
 <script>
-import FormComponent from './UI/FormComponent.vue'
+import FormComponent from './UI/FormComponent.vue';
 
 export default {
   components: { FormComponent },
   data() {
-    return { isSubmitted: false }
+    return { isSubmitted: false };
   },
   methods: {
     onFormSubmit() {
-      this.isSubmitted = true
+      this.isSubmitted = true;
     },
   },
-}
+};
 </script>
 <style lang="scss">
 .contact {

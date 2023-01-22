@@ -1,18 +1,40 @@
 <template>
   <section class="container" id="welcome-section">
     <div class="info-section">
-      <h1 class="info-section__title section-title">
+      <h1
+        data-aos="fade-right"
+        data-aos-once="true"
+        data-aos-duration="1000"
+        class="info-section__title section-title"
+      >
         Trade everywhere. Invest here!
       </h1>
-      <p class="info-section__description">
+      <p
+        data-aos="fade-right"
+        data-aos-once="true"
+        data-aos-duration="1000"
+        data-aos-delay="300"
+        class="info-section__description"
+      >
         We provide only the best trading software. The trading terminal
         MetaTrader4 is the most popular and convenient platform for access to
         global exchanges. You can work anywhere.
       </p>
-      <a href="#contact" class="btn-primary info-section__btn">Start Trading</a>
+      <a
+        data-aos="fade-right"
+        data-aos-once="true"
+        data-aos-duration="1000"
+        data-aos-delay="800"
+        href="#contact"
+        class="btn-primary info-section__btn"
+        >Start Trading</a
+      >
     </div>
     <div class="logo-container">
       <img
+        data-aos="fade-up"
+        data-aos-once="true"
+        data-aos-duration="1500"
         class="logo-container__img"
         src="/trade-image.svg"
         alt="trade-logo"
@@ -22,7 +44,7 @@
   </section>
 </template>
 <script>
-export default {}
+export default {};
 </script>
 <style lang="scss" scoped>
 .container {

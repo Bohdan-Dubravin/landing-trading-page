@@ -5,6 +5,9 @@
       @click="open(item.id)"
       class="accordion__item"
       :key="item.id"
+      data-aos="fade-left"
+      data-aos-once="true"
+      data-aos-duration="1000"
     >
       <div class="accordion__trigger">
         <h4 class="accordion__title">{{ item.title }}</h4>
@@ -35,18 +38,18 @@ export default {
   data() {
     return {
       visible: null,
-    }
+    };
   },
   methods: {
     open(id) {
       if (this.visible === id) {
-        this.visible = null
+        this.visible = null;
       } else {
-        this.visible = id
+        this.visible = id;
       }
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "vee-validate": "^4.7.3",
     "vue": "^3.2.45",
     "yup": "^0.32.11"

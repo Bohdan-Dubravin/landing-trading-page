@@ -2,7 +2,14 @@
   <section class="container" id="comments">
     <div class="comments">
       <div class="comments__title-container">
-        <h2 class="comments__title section-title">People love Big Invest</h2>
+        <h2
+          data-aos="fade-right"
+          data-aos-once="true"
+          data-aos-duration="1000"
+          class="comments__title section-title"
+        >
+          People love Big Invest
+        </h2>
         <div class="arrows-container comments__arrows">
           <div class="arrows-container__arrow-wrapper" @click="prevSlide">
             <img
@@ -26,6 +33,9 @@
           v-for="review in reviews"
           :key="review.id"
           :class="{ active: review.id === currentSlide }"
+          data-aos="fade-up"
+          data-aos-once="true"
+          data-aos-duration="1000"
         >
           <div class="comment-header">
             <img class="comment-image" :src="review.image" alt="person-ing" />
@@ -101,25 +111,25 @@ export default {
         },
       ],
       currentSlide: 1,
-    }
+    };
   },
   methods: {
     nextSlide() {
       if (this.currentSlide === this.reviews.length) {
-        this.currentSlide = 1
+        this.currentSlide = 1;
       } else {
-        this.currentSlide += 1
+        this.currentSlide += 1;
       }
     },
     prevSlide() {
       if (this.currentSlide === 1) {
-        this.currentSlide = this.reviews.length
+        this.currentSlide = this.reviews.length;
       } else {
-        this.currentSlide -= 1
+        this.currentSlide -= 1;
       }
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
