@@ -2,7 +2,7 @@
   <section class="container" id="welcome-section">
     <div class="info-section">
       <h1
-        data-aos="fade-right"
+        data-aos="zoom-in"
         data-aos-once="true"
         data-aos-duration="1000"
         class="info-section__title section-title"
@@ -10,7 +10,7 @@
         Trade everywhere. Invest here!
       </h1>
       <p
-        data-aos="fade-right"
+        data-aos="zoom-in"
         data-aos-once="true"
         data-aos-duration="1000"
         data-aos-delay="300"
@@ -21,7 +21,7 @@
         global exchanges. You can work anywhere.
       </p>
       <a
-        data-aos="fade-right"
+        data-aos="zoom-in"
         data-aos-once="true"
         data-aos-duration="1000"
         data-aos-delay="800"

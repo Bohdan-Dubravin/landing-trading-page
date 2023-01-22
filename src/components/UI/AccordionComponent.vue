@@ -5,7 +5,7 @@
       @click="open(item.id)"
       class="accordion__item"
       :key="item.id"
-      data-aos="fade-left"
+      data-aos="zoom-in"
       data-aos-once="true"
       data-aos-duration="1000"
     >
@@ -54,7 +54,6 @@ export default {
 
 <style lang="scss" scoped>
 .accordion {
-  transition: max-height 2s linear;
   &__item {
     padding: 32px 32px;
     border: 2px solid $violet-500;
@@ -67,18 +66,15 @@ export default {
     }
   }
   &__content {
-    transition: max-height 0.5s linear;
+    transition: max-height 0.2s ease-out;
     max-height: 0;
-    opacity: 0;
-    visibility: hidden;
+    overflow: hidden;
     max-width: 750px;
   }
 
   &__content--active {
-    transition: max-height 0.5s linear;
+    transition: max-height 0.7s ease-out;
     max-height: 1000px;
-    opacity: 1;
-    visibility: visible;
   }
 
   &__title {

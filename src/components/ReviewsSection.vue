@@ -33,9 +33,6 @@
           v-for="review in reviews"
           :key="review.id"
           :class="{ active: review.id === currentSlide }"
-          data-aos="fade-up"
-          data-aos-once="true"
-          data-aos-duration="1000"
         >
           <div class="comment-header">
             <img class="comment-image" :src="review.image" alt="person-ing" />
